@@ -15,51 +15,96 @@
 <body>
     <div id="map"></div>
 
-    <div class="modal fade" id="poiModal" tabindex="-1" role="dialog" aria-labelledby="poiModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="poiModalLabel">Masukkan POI</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="poiForm">
-                        <div class="form-group">
-                            <label for="nama_lokasi">Nama Lokasi</label>
-                            <input type="text" class="form-control" id="nama_lokasi" name="nama_lokasi" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="deskripsi_lokasi">Deskripsi Lokasi</label>
-                            <textarea class="form-control" id="deskripsi_lokasi" name="deskripsi_lokasi" rows="1" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="fasilitas">Fasilitas</label>
-                            <textarea class="form-control" id="fasilitas" name="fasilitas" rows="1" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="kategori_lokasi">Kategori Lokasi</label>
-                            <textarea class="form-control" id="kategori_lokasi" name="kategori_lokasi" rows="1" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="jam_operasional">Jam Operasional</label>
-                            <textarea class="form-control" id="jam_operasional" name="jam_operasional" rows="1" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="kontak_lokasi">Kontak Lokasi</label>
-                            <textarea class="form-control" id="kontak_lokasi" name="kontak_lokasi" rows="1" required></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" href=maps.php>Tutup</button>
-                    <button type="button" class="btn btn-primary" id="simpanPOI">Simpan</button>
-                </div>
+<div class="modal fade" id="poiModal" tabindex="-1" role="dialog" aria-labelledby="poiModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="poiModalLabel">Tambah POI Baru</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="poiForm">
+                    <div class="form-group">
+                        <label for="nama_lokasi">Nama Lokasi</label>
+                        <input type="text" class="form-control" id="nama_lokasi" name="nama_lokasi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deskripsi_lokasi">Deskripsi Lokasi</label>
+                        <textarea class="form-control" id="deskripsi_lokasi" name="deskripsi_lokasi" rows="1" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="fasilitas">Fasilitas</label>
+                        <textarea class="form-control" id="fasilitas" name="fasilitas" rows="1" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="kategori_lokasi">Kategori Lokasi</label>
+                        <textarea class="form-control" id="kategori_lokasi" name="kategori_lokasi" rows="1" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="jam_operasional">Jam Operasional</label>
+                        <textarea class="form-control" id="jam_operasional" name="jam_operasional" rows="1" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="kontak_lokasi">Kontak Lokasi</label>
+                        <textarea class="form-control" id="kontak_lokasi" name="kontak_lokasi" rows="1" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" href=maps.php>Tutup</button>
+                <button type="button" class="btn btn-primary" id="simpanPOI">Simpan</button>
             </div>
         </div>
     </div>
-    
+</div>
+
+<div class="modal fade" id="perbaruiPOIModal" tabindex="-1" role="dialog" aria-labelledby="perbaruiPOIModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="poiModalLabel">Perbarui data POI</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="poiForm">
+                    <div class="form-group">
+                        <label for="nama_lokasi">Nama Lokasi</label>    
+                        <input type="text" class="form-control" id="nama_lokasi" name="nama_lokasi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deskripsi_lokasi">Deskripsi Lokasi</label>
+                        <textarea class="form-control" id="deskripsi_lokasi" name="deskripsi_lokasi" rows="1" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="fasilitas">Fasilitas</label>
+                        <textarea class="form-control" id="fasilitas" name="fasilitas" rows="1" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="kategori_lokasi">Kategori Lokasi</label>
+                        <textarea class="form-control" id="kategori_lokasi" name="kategori_lokasi" rows="1" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="jam_operasional">Jam Operasional</label>
+                        <textarea class="form-control" id="jam_operasional" name="jam_operasional" rows="1" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="kontak_lokasi">Kontak Lokasi</label>
+                        <textarea class="form-control" id="kontak_lokasi" name="kontak_lokasi" rows="1" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" href=maps.php>Tutup</button>
+                <button type="button" class="btn btn-primary" id="simpanPOI">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
