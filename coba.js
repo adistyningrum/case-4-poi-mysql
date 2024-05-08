@@ -1,37 +1,28 @@
 $(document).ready(function() {
-    var mainMarker = null; // Deklarasi variabel mainMarker
+    var mainMarker = null; 
     
-    read_maps(); // Panggil fungsi read_maps saat dokumen siap
+    read_maps(); 
 
-    var map = L.map('map', { contextmenu: true }).setView([-7.250445, 112.768845], 10); // Inisialisasi peta
+    var map = L.map('map', { contextmenu: true }).setView([-7.250445, 112.768845], 10); 
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-    }).addTo(map); // Tambahkan layer peta
+    }).addTo(map); 
 
-    // Tambahkan event listener untuk klik pada peta
+
     map.on('click', function(e) {
         var lat = e.latlng.lat;
         var lng = e.latlng.lng;
-
+    
         if (!mainMarker) {
-            // Jika marker utama belum ada, tambahkan marker utama
             mainMarker = L.marker([lat, lng], { draggable: true }).addTo(map);
-            $('#nama_lokasi').val('');
-            $('#deskripsi_lokasi').val('');
-            $('#fasilitas').val('');
-            $('#kategori_lokasi').val('');
-            $('#jam_operasional').val('');
-            $('#kontak_lokasi').val('');
-
-            // Jika marker utama baru saja ditambahkan, langsung tampilkan modal
             createInfo(mainMarker);
         } else {
             mainMarker.setLatLng([lat, lng]);
-            // Tampilkan pop-up untuk mengedit informasi marker
             editMarkerInfo(mainMarker);
         }
     });
+    
 
     function createInfo(marker) {
         $('#nama_lokasi').val(marker.options.nama_lokasi || '');
@@ -86,7 +77,7 @@ $(document).ready(function() {
         $('#jam_operasional').val(marker.options.jam_operasional || '');
         $('#kontak_lokasi').val(marker.options.kontak_lokasi || '');
     
-        $('#poiModal').modal('show');
+        $('#perbaruiPOIModal').modal('show');
     
         $('#simpanPOI').off('click').on('click', function() {
             var nama_lokasi = $('#nama_lokasi').val();
@@ -130,7 +121,7 @@ $(document).ready(function() {
                 }
             });
     
-            $('#poiModal').modal('hide');
+            $('#perbaruiPOIModal').modal('hide');
         });
     }
     
@@ -152,7 +143,6 @@ $(document).ready(function() {
                 hapusDataPOI(marker.id);
             });
             newMarker.on('dragend', function(e) {
-                // Tampilkan pop-up untuk mengedit informasi marker
                 editMarkerInfo(newMarker);
             });
         });
